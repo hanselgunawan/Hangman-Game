@@ -1,0 +1,88 @@
+.hangman-body
+{
+    background: #070000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #070000, #00004d, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #070000, #00004d, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:white;
+}
+
+.row-header
+{
+    height: 200px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.h1-header
+{
+    text-transform: uppercase;
+    text-shadow: #fff 0px 0px 10px;
+    letter-spacing: 40px;
+    font-size: 60pt;
+}
+
+.h4-header
+{
+    padding-top: 10px;
+    text-transform: capitalize;
+    text-shadow: #fff 0px 3px 10px;
+    letter-spacing: 20px;
+}
+
+.row-border
+{
+    height: 10px;
+    margin-top: 12px;
+    background-image:-moz-linear-gradient(left,rgba(0,0,0,1),#ffffff,rgba(0,0,0,1));
+    background-image:-webkit-linear-gradient(left,rgba(0,0,0,1),#ffffff,rgba(0,0,0,1));
+    background-image:-o-linear-gradient(left,rgba(0,0,0,1),#ffffff,rgba(0,0,0,1));
+    background-image:-ms-linear-gradient(left,rgba(0,0,0,1),#ffffff,rgba(0,0,0,1));
+    background-image:linear-gradient(left,rgba(0,0,0,1),#ffffff,rgba(0,0,0,1));
+}
+
+.row-main
+{
+    padding-top: 80px;
+    text-align: center;
+}
+
+.row-main img
+{
+    width: 250px;
+    height: 250px;
+}
+
+.h3-singer-name
+{
+    margin-top:20px;
+    text-shadow: #fff 0px 0px 5px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+.p-song-title
+{
+    text-shadow: #fff 0px 0px 10px;
+    font-size: 14pt;
+    margin-top: -20px;
+    text-transform: capitalize;
+}
+
+.h3-main
+{
+    text-shadow: #fff 0px 0px 5px;
+    margin-bottom: 30px;
+}
+
+#game-container p
+{
+    text-shadow: #fff 0px 0px 5px;
+    font-size: 14pt;
+}
+
+#letters-container
+{
+    letter-spacing: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}

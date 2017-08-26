@@ -2,18 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hangman Game</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
-    <p id="game-container">
-        <h3>Press any key to play!</h3>
-        <p>Wins: <span id="wins-text"></span></p>
-        <p>Loses: <span id="loses-text"></span></p>
-        <p>Test: <span id="test-text"></span></p>
-        <h3 id="letters-container" style="letter-spacing: 10px"></h3>
-        <p>Number of guesses remaining: <span id="attempt-text"></span></p>
-        <p>Tried letters: <span id="wrongGuess"></span></p>
+<body class="hangman-body">
+    <div class="row row-header">
+        <div class="col-lg-12">
+            <h1 class="h1-header">hangman</h1>
+            <h4 class="h4-header">jazz edition</h4>
+        </div>
     </div>
+    <div class="row row-border">
+        <div class="col-lg-12">
+        </div>
+    </div>
+    <div class="row row-main">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <img id="song-image" src="assets/images/default-image.jpg" class="img-fluid img-thumbnail rounded mx-auto d-block">
+            <h3 id="singer-name" class="h3-singer-name"></h3>
+            <p id="song-title" class="p-song-title"></p>
+        </div>
+        <div class="col-lg-4">
+            <div id="game-container">
+                <h3 class="h3-main">Press any key to play!</h3>
+                <p>Wins: <span id="wins-text"></span></p>
+                <p>Loses: <span id="loses-text"></span></p>
+                <h3 id="letters-container"></h3>
+                <p>Number of guesses remaining: <span id="attempt-text"></span></p>
+                <p>Letters already guessed:</p>
+                <p id="wrongGuess"></p>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <iframe id="play-song" style="visibility: hidden" src="https://www.youtube.com/embed/r594pxUjcz4?ecver=1&rel=0&autoplay=1"></iframe>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
