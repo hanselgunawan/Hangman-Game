@@ -78,62 +78,55 @@ var question,
             wrongGuess_html = "";
 
             //if the keystroke that user inputs is NOT found
-            if(question.indexOf(userGuess)===-1)
-            {
-                //to keep track the correctGuess array
-                for (i = 0; i < question.length; i++) {
-                    new_html += this.correctGuess[i] + " ";
-                }
-
-                //store the wrong guess to an array = incorrectGuess
-                //if its there, don't push it
-                if(this.incorrectGuess.indexOf(userGuess) === -1)
-                {
-                    this.incorrectGuess.push(userGuess);
-                    this.num_of_attempt--;
-                }
-                document.getElementById("attempt-text").innerHTML = this.num_of_attempt;
-
-                for(i = 0; i < this.incorrectGuess.length; i++)
-                {
-                    if(i>0)
-                    {
-                        wrongGuess_html += ", " + this.incorrectGuess[i];
+            if (userGuess >= 'a' && userGuess <= 'z') {
+                if (question.indexOf(userGuess) === -1) {
+                    //to keep track the correctGuess array
+                    for (i = 0; i < question.length; i++) {
+                        new_html += this.correctGuess[i] + " ";
                     }
-                    else
-                    {
-                        wrongGuess_html += this.incorrectGuess[i];
+
+                    //store the wrong guess to an array = incorrectGuess
+                    //if its there, don't push it
+                    if (this.incorrectGuess.indexOf(userGuess) === -1) {
+                        this.incorrectGuess.push(userGuess);
+                        this.num_of_attempt--;
                     }
-                }
-                document.getElementById("letters-container").innerHTML = new_html;
-                document.getElementById("wrongGuess").innerHTML = wrongGuess_html;
-                document.getElementById("wrongGuess").style.marginTop = "-15px";
-            }
-            else
-            {
-                var indices = [];
+                    document.getElementById("attempt-text").innerHTML = this.num_of_attempt;
 
-                //get the index of the letter that user input
-                for(j=0; j<question.length; j++)
-                {
-                    if(question[j]===userGuess)
-                    {
-                        indices.push(j);
+                    for (i = 0; i < this.incorrectGuess.length; i++) {
+                        if (i > 0) {
+                            wrongGuess_html += ", " + this.incorrectGuess[i];
+                        }
+                        else {
+                            wrongGuess_html += this.incorrectGuess[i];
+                        }
                     }
+                    document.getElementById("letters-container").innerHTML = new_html;
+                    document.getElementById("wrongGuess").innerHTML = wrongGuess_html;
+                    document.getElementById("wrongGuess").style.marginTop = "-15px";
                 }
+                else {
+                    var indices = [];
 
-                //change _ to the letter that user input
-                for(k = 0; k < indices.length; k++)
-                {
-                    this.correctGuess[indices[k]] = userGuess;
+                    //get the index of the letter that user input
+                    for (j = 0; j < question.length; j++) {
+                        if (question[j] === userGuess) {
+                            indices.push(j);
+                        }
+                    }
+
+                    //change _ to the letter that user input
+                    for (k = 0; k < indices.length; k++) {
+                        this.correctGuess[indices[k]] = userGuess;
+                    }
+
+                    //update underscores string
+                    for (i = 0; i < question.length; i++) {
+                        new_html += this.correctGuess[i] + " ";
+                    }
+
+                    document.getElementById("letters-container").innerHTML = new_html;
                 }
-
-                //update underscores string
-                for (i = 0; i < question.length; i++) {
-                    new_html += this.correctGuess[i] + " ";
-                }
-
-                document.getElementById("letters-container").innerHTML = new_html;
             }
         },
 
